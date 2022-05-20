@@ -1,0 +1,37 @@
+{
+    "name": "DelegationBOF",
+    "version": "0.0.0",
+    "command_name": "delegationbof",
+    "extension_author": "c2biz",
+    "original_author": "IcebreakerSecurity",
+    "repo_url": "https://github.com/IcebreakerSecurity/DelegationBOF",
+    "help": "LDAP checks for RBCD, Constrained, Constrained w/Protocol Transition, Unconstrained Delegation, ASREP, and Kerberoastable SPNs",
+    "depends_on": "coff-loader",
+    "entrypoint": "go",
+    "files": [
+        {
+            "os": "windows",
+            "arch": "amd64",
+            "path": "delegationx64.o"
+        },
+        {
+            "os": "windows",
+            "arch": "386",
+            "path": "delegationx86.o"
+        }
+    ],
+    "arguments": [
+        {
+            "name": "type",
+            "desc": "1 = Constrained, 2 = ConstrainedProto, 3 = Unconstrained, 4 = RBCD, 5 = All Delegation, 6 = spn, 7 = ASREP, 8 = All Roast",
+            "type": "int",
+            "optional": false
+        },
+        {
+            "name": "fqdn",
+            "desc": "If no domain is provided, the local domain is used.",
+            "type": "string",
+            "optional": true
+        }
+    ]
+}
