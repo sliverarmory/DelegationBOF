@@ -30,7 +30,7 @@
         {
             "name": "fqdn",
             "desc": "If no domain is provided, the local domain is used.",
-            "type": "string",
+            "type": "wstring",
             "optional": true
         }
     ]
